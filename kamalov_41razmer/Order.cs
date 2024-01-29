@@ -12,26 +12,24 @@ namespace kamalov_41razmer
     using System;
     using System.Collections.Generic;
     
-    public partial class service_a_import
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public service_a_import()
+        public Order()
         {
-            this.ClientService = new HashSet<ClientService>();
-            this.ServicePhoto = new HashSet<ServicePhoto>();
+            this.OrderProduct = new HashSet<OrderProduct>();
         }
     
-        public int ID { get; set; }
-        public string Title { get; set; }
-        public string MainImagePath { get; set; }
-        public int DurationInSeconds { get; set; }
-        public decimal Cost { get; set; }
-        public Nullable<double> Discount { get; set; }
-        public string Description { get; set; }
+        public int OrderID { get; set; }
+        public Nullable<System.DateTime> OrderDate { get; set; }
+        public System.DateTime OrderDeliveryDate { get; set; }
+        public int OrderPickupPoint { get; set; }
+        public string OrderClient { get; set; }
+        public string OrderReceiveCode { get; set; }
+        public string OrderStatus { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ClientService> ClientService { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ServicePhoto> ServicePhoto { get; set; }
+        public virtual ICollection<OrderProduct> OrderProduct { get; set; }
+        public virtual PickupPoint PickupPoint { get; set; }
     }
 }

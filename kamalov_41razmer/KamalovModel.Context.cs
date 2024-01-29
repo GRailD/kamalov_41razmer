@@ -13,10 +13,10 @@ namespace kamalov_41razmer
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Baiguzin_autoserviceEntities : DbContext
+    public partial class KamalovEntities : DbContext
     {
-        public Baiguzin_autoserviceEntities()
-            : base("name=Baiguzin_autoserviceEntities")
+        public KamalovEntities()
+            : base("name=KamalovEntities")
         {
         }
     
@@ -25,16 +25,11 @@ namespace kamalov_41razmer
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Client> Client { get; set; }
-        public virtual DbSet<ClientService> ClientService { get; set; }
-        public virtual DbSet<DocumentByService> DocumentByService { get; set; }
-        public virtual DbSet<Gender> Gender { get; set; }
-        public virtual DbSet<Manufacturer> Manufacturer { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
+        public virtual DbSet<OrderProduct> OrderProduct { get; set; }
+        public virtual DbSet<PickupPoint> PickupPoint { get; set; }
         public virtual DbSet<Product> Product { get; set; }
-        public virtual DbSet<ProductPhoto> ProductPhoto { get; set; }
-        public virtual DbSet<ProductSale> ProductSale { get; set; }
-        public virtual DbSet<service_a_import> service_a_import { get; set; }
-        public virtual DbSet<ServicePhoto> ServicePhoto { get; set; }
-        public virtual DbSet<Tag> Tag { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<User> User { get; set; }
     }
 }

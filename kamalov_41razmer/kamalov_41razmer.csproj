@@ -67,57 +67,42 @@
     <Compile Include="AddEditPage.xaml.cs">
       <DependentUpon>AddEditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Client.cs">
-      <DependentUpon>KamalovModel41.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ClientService.cs">
-      <DependentUpon>KamalovModel41.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DocumentByService.cs">
-      <DependentUpon>KamalovModel41.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Gender.cs">
-      <DependentUpon>KamalovModel41.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KamalovModel41.Context.cs">
+    <Compile Include="KamalovModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>KamalovModel41.Context.tt</DependentUpon>
+      <DependentUpon>KamalovModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="KamalovModel41.cs">
+    <Compile Include="KamalovModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>KamalovModel41.tt</DependentUpon>
+      <DependentUpon>KamalovModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="KamalovModel41.Designer.cs">
+    <Compile Include="KamalovModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>KamalovModel41.edmx</DependentUpon>
+      <DependentUpon>KamalovModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs" />
-    <Compile Include="Manufacturer.cs">
-      <DependentUpon>KamalovModel41.tt</DependentUpon>
+    <Compile Include="Order.cs">
+      <DependentUpon>KamalovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderProduct.cs">
+      <DependentUpon>KamalovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PickupPoint.cs">
+      <DependentUpon>KamalovModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>KamalovModel41.tt</DependentUpon>
+      <DependentUpon>KamalovModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProductPhoto.cs">
-      <DependentUpon>KamalovModel41.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductSale.cs">
-      <DependentUpon>KamalovModel41.tt</DependentUpon>
+    <Compile Include="Role.cs">
+      <DependentUpon>KamalovModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ServicePage.xaml.cs">
       <DependentUpon>ServicePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ServicePhoto.cs">
-      <DependentUpon>KamalovModel41.tt</DependentUpon>
-    </Compile>
-    <Compile Include="service_a_import.cs">
-      <DependentUpon>KamalovModel41.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tag.cs">
-      <DependentUpon>KamalovModel41.tt</DependentUpon>
+    <Compile Include="User.cs">
+      <DependentUpon>KamalovModel.tt</DependentUpon>
     </Compile>
     <Page Include="AddEditPage.xaml">
       <SubType>Designer</SubType>
@@ -158,12 +143,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="KamalovModel41.edmx">
+    <EntityDeploy Include="KamalovModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>KamalovModel41.Designer.cs</LastGenOutput>
+      <LastGenOutput>KamalovModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="KamalovModel41.edmx.diagram">
-      <DependentUpon>KamalovModel41.edmx</DependentUpon>
+    <None Include="App.Config" />
+    <None Include="KamalovModel.edmx.diagram">
+      <DependentUpon>KamalovModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -172,27 +158,24 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Rex\icon.ico" />
     <Resource Include="Rex\logo.png" />
     <Resource Include="Rex\picture.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="KamalovModel41.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>KamalovModel41.Context.cs</LastGenOutput>
-      <DependentUpon>KamalovModel41.edmx</DependentUpon>
-    </Content>
-    <Content Include="KamalovModel41.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KamalovModel41.edmx</DependentUpon>
-      <LastGenOutput>KamalovModel41.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="KamalovModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KamalovModel.edmx</DependentUpon>
+      <LastGenOutput>KamalovModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="KamalovModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KamalovModel.edmx</DependentUpon>
+      <LastGenOutput>KamalovModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
