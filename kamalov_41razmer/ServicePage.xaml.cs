@@ -30,5 +30,30 @@ namespace kamalov_41razmer
         {
             Manager.MainFrame.Navigate(new AddEditPage());
         }
+
+        private void TBSearch_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void TBSearch_DataContextChanged_1(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void SortCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void TBSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TypeCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
