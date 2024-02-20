@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a53b5e8648ae42aeb87816a82d0d6647" Name="Diagram1">
-        <EntityTypeShape EntityType="KamalovModel.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="KamalovModel.OrderProduct" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KamalovModel.PickupPoint" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KamalovModel.Product" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="KamalovModel.Role" Width="1.5" PointX="5.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KamalovModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KamalovModel.User" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
-        <AssociationConnector Association="KamalovModel.FK__OrderProd__Order__2E1BDC42" ManuallyRouted="false" />
-        <AssociationConnector Association="KamalovModel.FK_Order_PickupPoint" ManuallyRouted="false" />
-        <AssociationConnector Association="KamalovModel.FK_OrderProduct_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="KamalovModel.FK__User__UserRole__30F848ED" ManuallyRouted="false" />
+      <Diagram DiagramId="dfa069cbd6744dab88ef99e071ec1c46" Name="Diagram1">
+        <EntityTypeShape EntityType="razmer_kamalovModel.Order" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="razmer_kamalovModel.OrderProduct" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="razmer_kamalovModel.PickupPoint" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="razmer_kamalovModel.Product" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="razmer_kamalovModel.Role" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="razmer_kamalovModel.User" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="razmer_kamalovModel.FK__OrderProd__Order__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="razmer_kamalovModel.FK_Order_PickupPoint" ManuallyRouted="false" />
+        <AssociationConnector Association="razmer_kamalovModel.FK_Order_User" ManuallyRouted="false" />
+        <AssociationConnector Association="razmer_kamalovModel.FK_OrderProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="razmer_kamalovModel.FK__User__UserRole__31EC6D26" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

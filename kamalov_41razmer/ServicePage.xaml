@@ -10,40 +10,87 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0">
-            <TextBox Name="TBSearch" Width="300" Margin="5" TextChanged="TBSearch_TextChanged"></TextBox>
-            <ComboBox Name="SortCombo" Margin="5" SelectionChanged="SortCombo_SelectionChanged" FontSize="15" Width="250">
-                <TextBlock Text="Стоимость по возрастанию"></TextBlock>
-                <TextBlock Text="Стоимость по убыванию"></TextBlock>
-            </ComboBox>
-            <ComboBox Name="TypeCombo" SelectionChanged="TypeCombo_SelectionChanged" FontSize="15" Width="200" Margin="5">
-                <TextBlock Text="Все диапозоны"></TextBlock>
-                <TextBlock Text="0 - 9,99%"></TextBlock>
-                <TextBlock Text="10-14,99%"></TextBlock>
-                <TextBlock Text="15%"></TextBlock>
-                <TextBlock Text="более 15%"></TextBlock>
 
-            </ComboBox>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                <TextBlock Name="authuser" Text="Вы авторизованы как " FontSize="20"></TextBlock>
+                <TextBlock Name="authuserrole" Text="Роль: " FontSize="20"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Name="CountObject" Text="Кол-во 0 из 0" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="10,0,0,0" VerticalAlignment="Bottom">
+                    <TextBlock Text="поиск по наименованию" FontSize="20"></TextBlock>
+                    <TextBox Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" Width="240" HorizontalAlignment="Left"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="10,0,0,0" VerticalAlignment="Bottom">
+                    <StackPanel Orientation="Vertical">
+                        <RadioButton Name="UpCost" Content="по возрастанию стоимости" VerticalAlignment="Center" FontSize="20" Checked="UpCost_Checked"></RadioButton>
+                        <RadioButton Name="DownCost" Content="по убыванию стоимости" VerticalAlignment="Center" FontSize="20" Checked="DownCost_Checked"></RadioButton>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="10,0,0,0" VerticalAlignment="Bottom">
+                    <TextBlock Text="фильтрация по скидке" FontSize="20"></TextBlock>
+                    <ComboBox Name="DiscountFilter" SelectionChanged="DiscountFilter_SelectionChanged_1"  Width="220" HorizontalAlignment="Left">
+                        <TextBlock>Без фильтра</TextBlock>
+                        <TextBlock>0-9,99%</TextBlock>
+                        <TextBlock>10-14,99%</TextBlock>
+                        <TextBlock>15% и более</TextBlock>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
-        <ListView Name="KamalovListView" Grid.Row="2">
+        <ListView Name ="ProductListView" Grid.Row="1" >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="ContextMenu">
+                        <Setter.Value>
+                            <ContextMenu>
+                                <MenuItem Header="Добавить к заказу" Name="AddOrder" Click="AddOrder_Click"/>
+                            </ContextMenu>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
+                        <!--Background="{Binding Colored}"-->
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="200"></ColumnDefinition>
+                            <ColumnDefinition Width="1500"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
+                        <Image Width="200" Grid.Column="0" Grid.RowSpan="5" Stretch="UniformtoFill" HorizontalAlignment="Left">
+                            <Image.Source>
+                                <Binding Path="ProductImage">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>
+                                            Rex/picture.png
+                                        </ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+
+                        <TextBlock Text="{Binding ProductName}" FontWeight="Bold" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding ProductDescription}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding ProductManufacturer}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding ProductCost}" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="Скидка" Grid.Column="2" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding ProductDiscountAmount, StringFormat={}{0}%}" FontWeight="Bold" Grid.Column="2" Grid.Row="3" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50" TextWrapping="Wrap"></TextBlock>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

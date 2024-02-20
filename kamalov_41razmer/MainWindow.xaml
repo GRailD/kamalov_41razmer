@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kamalov_41razmer"
         mc:Ignorable="d"
-        Title="Обувная Камалова" Height="450" Width="800" FontFamily="Comic Sans MS" Icon="Rex/icon.ico">
-    <Grid>
+        Title="Обувная Камалова" Height="700" Width="1200" MinHeight="700" MinWidth="1200" FontFamily="Comic Sans MS" Icon="Rex/icon.ico">
+    <Grid Background="#FFFFCC99">
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>

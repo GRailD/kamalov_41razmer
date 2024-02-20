@@ -17,12 +17,12 @@ namespace kamalov_41razmer
     {
 
         private static KamalovEntities _context;
-
         public static KamalovEntities GetContext()
         {
             if (_context == null)
+            {
                 _context = new KamalovEntities();
-
+            }
             return _context;
         }
         public KamalovEntities()
@@ -40,7 +40,6 @@ namespace kamalov_41razmer
         public virtual DbSet<PickupPoint> PickupPoint { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Role> Role { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
     }
 }

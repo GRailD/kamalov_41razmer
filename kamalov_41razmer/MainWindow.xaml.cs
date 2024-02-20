@@ -23,14 +23,11 @@ namespace kamalov_41razmer
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new ServicePage());
+            MainFrame.Navigate(new Authxaml());
             Manager.MainFrame = MainFrame;
         }
 
-        private void BtnBack_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.MainFrame.GoBack();
-        }
+        
 
         private void MainFrame_ContentRendered(object sender, EventArgs e)
         {
@@ -40,8 +37,14 @@ namespace kamalov_41razmer
             }
             else
             {
-                BtnBack.Visibility = Visibility.Visible;
+                BtnBack.Visibility = Visibility.Hidden;
             }
         }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.GoBack();
+        }
+    
     }
 }
